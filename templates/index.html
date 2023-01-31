@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Reccomendation!</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+      }
+
+      #wrappermaincontent {
+        background-color: white;
+        color: black;
+        text-align: center;
+        width: 35%;
+        border-radius: 20px;
+        padding: 10px;
+      }
+
+      button {
+        width: 25%;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+      }
+
+      input[type="submit"]:hover {
+        border: solid 2px black;
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrappermaincontent">
+      <h1>Rekomendasi Buku</h1>
+      <p style="text-align: justify">
+        Masukkan buku yang anda sukai untuk mendapatkan rekomendasi buku lainnya
+        yang kemungkinan anda juga suka!
+      </p>
+      <select name="" id="book_selector">
+        <option value="harry_potter">Harry Potter</option>
+        <option value="paper_umbrella">Paper Umbrella</option>
+        <option value="moudy">Moudy</option>
+        <option value="the_dragon_republic">The Dragon Republic</option>
+        <option value="the_poppy_war">The Poppy War</option>
+        <option value="hidden_world">Hidden World</option>
+        <option value="whiteandgrey">White and Grey</option>
+        <option value="selena">Selena</option>
+      </select>
+      <button onclick="getOption()">Enter</button>
+      <hr />
+      <h4>Berikut buku yang direkomendasikan untuk anda!</h4>
+      <p id="list_rekomendasi_buku"></p>
+    </div>
+    <script>
+      function getOption() {
+        output = document.querySelector("#book_selector").value;
+        data = "";
+
+        if (output == "harry_potter") {
+          ("{% for item in harry_potter %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "paper_umbrella") {
+          ("{% for item in paper_umbrella %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "moudy") {
+          ("{% for item in moudy %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "the_dragon_republic") {
+          ("{% for item in the_dragon_republic %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "the_poppy_war") {
+          ("{% for item in the_poppy_war %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "hidden_world") {
+          ("{% for item in hidden_world %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "whiteandgrey") {
+          ("{% for item in whiteandgrey %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        } else if (output == "selena") {
+          ("{% for item in selena %}");
+          data += "{{item}}" + ", ";
+          ("{% endfor %}");
+          document.querySelector("#list_rekomendasi_buku").textContent =
+            data.slice(0, -2);
+        }
+      }
+    </script>
+  </body>
+</html>
