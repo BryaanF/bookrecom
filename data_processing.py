@@ -24,11 +24,13 @@ print("panjang data :", data.shape[0])
 association_rules = apriori(trx, min_support=0.05, min_confidence=0.20,min_lift=1)
 # Membuat list hasil dari algoritma apriori
 association_results = association_rules
+print(trx)
 
 # Menampilkan hasil asosiasi dari item 
 
 pd.set_option('display.max_rows', 1000)
 Result=pd.DataFrame(columns=['Rule','Support','Confidence'])
+# print(Result)
 
 # membuat dan mengkalsifikasikan rekomendasi berdasarkan data buku
 harry_potter = []
@@ -40,13 +42,13 @@ hidden_world = []
 whiteandgrey = []
 selena = []
 
+# untuk melakukan perulangan yang ada di dalam association result dan menambahkan 
 for item in association_results:
     pair = item[2]
     for i in pair:
         items = ''.join([str (x) for x in i[0]])
         if i[3]!=1:
             if (str([ x for x in i[0]]) == "['harry potter']" and len([x for x in i[1]]) <2):
-                
                 harry_potter.append(
                 ''.join([str (x) for x in i[1]])
                 )
@@ -86,17 +88,17 @@ for item in association_results:
                 
                 
 # print(len(Result))
-print(Result)
+# print(Result)
 
 
-print("harry potter:", harry_potter)
-print("paper umbrella:",paper_umbrella)
-print("moudy:",moudy)
-print("the dragon republic:",the_dragon_republic)
-print("the poppy war:",the_poppy_war)
-print("hidden world:",hidden_world)
-print("white and grey:",whiteandgrey)
-print("selena:",selena)
+# print("harry potter:", harry_potter)
+# print("paper umbrella:",paper_umbrella)
+# print("moudy:",moudy)
+# print("the dragon republic:",the_dragon_republic)
+# print("the poppy war:",the_poppy_war)
+# print("hidden world:",hidden_world)
+# print("white and grey:",whiteandgrey)
+# print("selena:",selena)
 
 
 no_thisword = "hidden world"
