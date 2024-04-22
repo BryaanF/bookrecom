@@ -1,0 +1,19 @@
+Programming Language : Python Version 3.11.1
+Library :
+- Flask 
+- Apriori
+- Pandas
+
+To run this program :
+1. Install python
+2. Install library with command line
+	- pip install flask
+	- pip install pandas
+	- pip install apriori
+3. Run it with go to this folder place via terminal
+then run this command 'Scripts\activate' 
+4. Run this command to open flask to open up website with
+the command 'flask --app index run'
+5. Run browser and type in 'localhost:5000' or you can do
+like reccomended with '127.0.0.1:5000' 
+6. Done, after you access those site you ready to go!
